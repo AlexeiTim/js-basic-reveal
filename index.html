@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-javascript data-transition="convex">
+            <h1>JavaScript</h1>
+            <p class="fragment" data-fragment-index="1">Мультипарадигменный</p>
+            <p class="fragment" data-fragment-index="2">Язык с динамической типизацией</p>
+            <p class="fragment" data-fragment-index="3">Даёт динамику, интерактивность, заполнение контента.
+                Взаимодействие пользователя с сайтом.</p>
+        </section>
+        <section data-variables  data-transition="convex">
+            <h3>Переменные</h3>
+            <p  class="fragment" data-fragment-index="1"> Это контейнеры, внутри которых вы можете хранить значения</p>
+            <div class="fragment" data-fragment-index="2">
+                <span>Изменяемые</span>
+                <pre><code>let age = 27</code></pre>
+            </div>
+            <div class="fragment" data-fragment-index="3">
+                <span>Не изменяемые</span>
+                <pre><code>const COLOR_BLUE = 'blue'</code></pre>
+            </div>
+            <div class="fragment" data-fragment-index="4">
+                <span>Устаревшее ключевое слово "var"</span>
+                <pre><code>var name = 'Alexei'</code></pre>
+            </div>
+        </section>
+        <section data-types  data-transition="convex">
+            <h3>Типы данных</h3>
+            <div class="fragment" data-fragment-index="1">
+                <p>Примитивы</p>
+                <ul>
+                    <li>String</li>
+                    <li>Number</li>
+                    <li>Undefined</li>
+                    <li>Boolean</li>
+                    <li>Bigint</li>
+                    <li>Symbol</li>
+                    <li>null</li>
+                </ul>
+            </div>
+            <p class="fragment" data-fragment-index="2">Обьекты - <span style="color: red">Object</span></p>
+        </section>
+        <section data-operatos  data-transition="convex">
+            <section>
+                <h2>Операторы</h2>
+            </section>
+            <section>
+                <h3>Базовые операторы</h3>
+                <ul>
+                    <li>Сложение <code>+</code></li>
+                    <li>Вычитание <code>-</code></li>
+                    <li>Умножение <code>*</code></li>
+                    <li>Деление <code>/</code></li>
+                    <li>Взятие остатка от деления <code>%</code></li>
+                    <li>Возведение в степень <code>**</code></li>
+                    <li>Присваевание <code>=</code></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Логические операторы</h3>
+                <ul>
+                    <li><code>||</code> (ИЛИ)
+                    </li>
+                    <li><code>&amp;&amp;</code> (И)
+                    </li>
+                    <li><code>!</code> (НЕ)</li>
+                    <li><code>??</code> (Оператор нулевого слияния)
+                    </li>
+                    <li>и т. д.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Математические операторы(Math)</h3>
+                <p>
+                    <pre><code>Math.random()</code></pre>
+                </p>
+                <p><pre><code>Math.max(a, b, c...) / Math.min(a, b, c...)</code></pre></p>
+                <p><pre><code>Math.pow(n, power)</code></pre></p>
+                <p>Округление</p>
+                <p><pre><code>Math.floor, Math.ceil, Math.trunc, Math.round</code></pre></p>
+            </section>
+        </section>
+        <section data-type-convert  data-transition="convex">
+            <section>
+                <h2>Преобразование типов данных</h2>
+            </section>
+            <section>
+                <h3>Строковое преобразование</h3>
+                <pre><code>
+let value = true;
+alert(typeof value); // boolean
+
+value = String(value); // теперь value это строка "true"
+alert(typeof value); // string
+                </code></pre>
+            </section>
+            <section>
+                <h3>Численное преобразование</h3>
+                <pre><code>
+alert( Number("   123   ")); // 123
+alert( Number("123z") ); // NaN (ошибка чтения числа
+// на месте символа "z")
+alert( Number(true) ); // 1
+alert( Number(false) ); // 0
+                </code></pre>
+            </section>
+            <section>
+                <h3>Логическое преобразование</h3>
+                <pre><code>
+alert( Boolean(1) ); // true
+alert( Boolean(0) ); // false
+
+alert( Boolean("Привет!") ); // true
+alert( Boolean("") ); // false
+                </code></pre>
+            </section>
+
+        </section>
+        <section data-conditions  data-transition="convex">
+            <section>
+                <h2>Условные операторы</h2>
+            </section>
+            <section>
+                <h3>Инструкция «if»</h3>
+                <p>Инструкция if(...) вычисляет условие в скобках и, если результат true, то выполняет блок кода.</p>
+                <pre><code data-trim>
+let year = prompt('Введите 2015', '');
+if (year == 2015) alert( 'Вы правы!' );
+                </code></pre>
+            </section>
+            <section>
+                <h3>Блок «else»</h3>
+                <pre><code>
+let year = prompt('ECMAScript 2015?', '');
+if (year == 2015) {
+  alert( 'Да вы знаток!' );
+} else {
+  alert( 'А вот и неправильно!' ); // любое значение, кроме 2015
+}
+                </code></pre>
+                <pre><code>
+if (year < 2015) {
+  alert( 'Это слишком рано...' );
+} else if (year > 2015) {
+  alert( 'Это поздновато' );
+} else {
+  alert( 'Верно!' );
+}
+                </code></pre>
+            </section>
+            <section>
+                <h3>Условный оператор „?“</h3>
+                <pre><code>let result = условие ? значение1 : значение2;</code></pre>
+                <pre><code>let accessAllowed = (age > 18) ? true : false;</code></pre>
+                <h4>Несколько операторов „?“</h4>
+                <pre><code>let age = prompt('Возраст?', 18);
+
+let message = (age < 3) ? 'Здравствуй, малыш!' :
+  (age < 18) ? 'Привет!' :
+  (age < 100) ? 'Здравствуйте!' :
+  'Какой необычный возраст!';
+
+alert( message );</code></pre>
+            </section>
+        </section>
+        <section data-switch>
+            <h2>Конструкция "switch"</h2>
+            <pre><code>switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    [break]
+
+  case 'value2':  // if (x === 'value2')
+    ...
+    [break]
+
+  default:
+    ...
+    [break]
+}</code></pre>
+        </section>
+        <section data-loop>
+            <section><h2>Циклы</h2></section>
+            <section>
+                <h3>Цикл «while»</h3>
+                <pre><code>let i = 0;
+while (i < 3) { // выводит 0, затем 1, затем 2
+  alert( i );
+  i++;
+}</code></pre>
+            </section>
+            <section>
+                <h3>Цикл «do…while»</h3>
+                <pre><code>let i = 0;
+do {
+  alert( i );
+  i++;
+} while (i < 3);</code></pre>
+            </section>
+            <section>
+                <h3>Цикл «for»</h3>
+                <pre><code>for (let i = 0; i < 3; i++) { // выведет 0, затем 1, затем 2
+  alert(i);
+}</code></pre>
+            </section>
+            <section>
+                <h3>Прерывание цикла: «break»</h3>
+                <pre><code>let sum = 0;
+
+while (true) {
+
+  let value = +prompt("Введите число", '');
+
+  if (!value) break; // (*)
+
+  sum += value;
+
+}
+alert( 'Сумма: ' + sum );</code></pre>
+            </section>
+            <section>
+                <h3>Переход к следующей итерации: continue</h3>
+                <pre><code>for (let i = 0; i < 10; i++) {
+
+  // если true, пропустить оставшуюся часть тела цикла
+  if (i % 2 == 0) continue;
+
+  alert(i); // 1, затем 3, 5, 7, 9
+}</code></pre>
+            </section>
+        </section>
+        <section data-function>
+            <section><h2>Функции</h2></section>
+            <section>
+                <h3>Объявление функции</h3>
+                <pre><code>function имя(параметры) {
+  ...тело...
+}</code></pre>
+                <pre><code>function showMessage() {
+  alert( 'Всем привет!' );
+}
+
+showMessage();
+showMessage();</code></pre>
+            </section>
+            <section>
+                <h3>Локальные переменные</h3>
+                <pre><code>function showMessage() {
+  let message = "Привет, я JavaScript!"; // локальная переменная
+
+  alert( message );
+}
+
+showMessage(); // Привет, я JavaScript!
+
+alert( message ); // <-- будет ошибка, т.к. переменная видна только внутри функции</code></pre>
+                <h3>Внешние переменные</h3>
+                <pre><code>let userName = 'Вася';
+
+function showMessage() {
+  let message = 'Привет, ' + userName;
+  alert(message);
+}
+
+showMessage(); // Привет, Вася</code></pre>
+            </section>
+            <section>
+                <h3>Параметры</h3>
+                <pre><code>function showMessage(from, text) { // параметры: from, text
+  alert(from + ': ' + text);
+}
+
+showMessage('Аня', 'Привет!'); // Аня: Привет! (*)
+showMessage('Аня', "Как дела?"); // Аня: Как дела? (**)</code></pre>
+                <h3>Значения по умолчанию</h3>
+                <pre><code>function showMessage(from, text = "текст не добавлен") {
+  alert( from + ": " + text );
+}
+
+showMessage("Аня"); // Аня: текст не добавлен</code></pre>
+            </section>
+            <section>
+                <h3>Возврат значения</h3>
+                <pre><code>function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(1, 2);
+alert( result ); // 3</code></pre>
+            </section>
+            <section>
+                <h3>Выбор имени функции</h3>
+                <ul>
+                    <li><code>"get…"</code> – возвращают значение,</li>
+                    <li><code>"calc…"</code> – что-то вычисляют,</li>
+                    <li><code>"create…"</code> – что-то создают,</li>
+                    <li><code>"check…"</code> – что-то проверяют и возвращают логическое значение, и т.д.</li>
+                </ul>
+                <pre><code>showMessage(..)     // показывает сообщение
+getAge(..)          // возвращает возраст (получая его каким-то образом)
+calcSum(..)         // вычисляет сумму и возвращает результат
+createForm(..)      // создаёт форму (и обычно возвращает её)
+checkPermission(..) // проверяет доступ, возвращая true/false</code></pre>
+            </section>
+            <section>
+                <h3>Виды функций</h3>
+                <p>Function Declaration</p>
+                <pre><code>function sayHi() {
+  alert( "Привет" );
+}</code></pre>
+                <p>Function Expression</p>
+                <pre><code>let sayHi = function() {
+  alert( "Привет" );
+};</code></pre>
+                <p>Arrow function</p>
+                <pre><code>let func = (arg1, arg2, ...argN) => expression;</code></pre>
+            </section>
+        </section>
+        <section data-arrays>
+            <section><h2>Массивы</h2></section>
+            <section>
+                <h3>Объявление</h3>
+                <pre><code>let arr = new Array();
+let arr = [];</code></pre>
+                <pre><code>let fruits = ["Яблоко", "Апельсин", "Слива"];
+alert( fruits[0] ); // Яблоко
+alert( fruits[1] ); // Апельсин
+alert( fruits[2] ); // Слива</code></pre>
+            </section>
+            <section>
+                <h3>Методы</h3>
+                <p>ForEach</p>
+                <pre><code>const arr = [1, 2, 3];
+
+arr.forEach(num => console.log(num));
+
+// Консоль: 1, 2, 3</code></pre>
+                <p>Map</p>
+                <pre><code>const arr = [1, 2, 3, 4, 5];
+const areEven = arr.map(num => num % 2 === 0);
+console.log(areEven); // Консоль: [false, true, false, true, false]</code></pre>
+                <p>Filter</p>
+                <pre><code>const arr = [1, 2, 3, 4, 5];
+const evenNumbers = arr.filter(num => num % 2 === 0);
+console.log(evenNumbers); // Консоль[2, 4]</code></pre>
+            </section>
+            <section>
+                <ul>
+                    <li><code>push(...items)</code> добавляет <code>items</code> в конец массива.</li>
+                    <li><code>pop()</code> удаляет элемент в конце массива и возвращает его.</li>
+                    <li><code>shift()</code> удаляет элемент в начале массива и возвращает его.</li>
+                    <li><code>unshift(...items)</code> добавляет <code>items</code> в начало массива.</li>
+                </ul>
+                <p>и т. д.</p>
+            </section>
+            <section>
+                <h3>Перебор элементов</h3>
+                <p>for</p>
+                <pre><code>let arr = ["Яблоко", "Апельсин", "Груша"];
+
+for (let i = 0; i < arr.length; i++) {
+  alert( arr[i] );
+}</code></pre>
+                <p>for..of</p>
+                <pre><code>let fruits = ["Яблоко", "Апельсин", "Слива"];
+
+// проходит по значениям
+for (let fruit of fruits) {
+  alert( fruit );
+}</code></pre>
+            </section>
+        </section>
+        <section data-object>
+            <section><h2>Объекты</h2></section>
+            <section>
+                <h3>Объявление</h3>
+                <pre><code>let user = new Object(); // синтаксис "конструктор объекта"
+let user = {};  // синтаксис "литерал объекта"</code></pre>
+                <h3>Литералы и свойства</h3>
+                <pre><code>let user = {     // объект
+  name: "John",  // под ключом "name" хранится значение "John"
+  age: 30        // под ключом "age" хранится значение 30
+};</code></pre>
+            </section>
+            <section>
+                <h3>Удаление свойства объекта</h3>
+                <pre><code>delete user.age;</code></pre>
+                <h3>Квадратные скобки</h3>
+                <pre><code>let user = {};
+
+// присваивание значения свойству
+user["likes birds"] = true;
+
+// получение значения свойства
+alert(user["likes birds"]); // true
+
+// удаление свойства
+delete user["likes birds"];</code></pre>
+                <pre><code>let key = "likes birds";
+
+// то же самое, что и user["likes birds"] = true;
+user[key] = true;</code></pre>
+            </section>
+            <section>
+                <h3>Свойство из переменной</h3>
+                <pre><code>function makeUser(name, age) {
+  return {
+    name, // то же самое, что и name: name
+    age   // то же самое, что и age: age
+    // ...
+  };
+}</code></pre>
+                <h3>Проверка существования свойства, оператор «in»</h3>
+                <pre><code>let user = { name: "John", age: 30 };
+
+alert( "age" in user ); // true, user.age существует
+alert( "blabla" in user ); // false, user.blabla не существует</code></pre>
+            </section>
+            <section>
+                <h3>Цикл "for..in"</h3>
+                <pre><code>let user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
+
+for (let key in user) {
+  // ключи
+  alert( key );  // name, age, isAdmin
+  // значения ключей
+  alert( user[key] ); // John, 30, true
+}</code></pre>
+            </section>
+        </section>
+        <section data-this>
+            <section><h2>This</h2></section>
+            <section>
+                <h3>Ключевое слово «this» в методах</h3>
+                <pre><code>let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    // "this" - это "текущий объект".
+    alert(this.name);
+  }
+
+};
+
+user.sayHi(); // John</code></pre>
+            </section>
+            <section>
+                <h3>«this» не является фиксированным</h3>
+                <pre><code>let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+  alert( this.name );
+}
+
+// используем одну и ту же функцию в двух объектах
+user.f = sayHi;
+admin.f = sayHi;
+
+// эти вызовы имеют  разное значение this
+// "this" внутри функции - это объект "перед точкой"
+user.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+</code></pre>
+            </section>
+            <section>
+                <h3>У стрелочных функций нет «this»</h3>
+                <span>Стрелочные функции особенные: у них нет своего «собственного» this. Если мы ссылаемся на this внутри такой функции, то оно берётся из внешней «нормальной» функции.</span>
+                <pre><code>let user = {
+  firstName: "Ilya",
+  sayHi() {
+    let arrow = () => alert(this.firstName);
+    arrow();
+  }
+};
+
+user.sayHi(); // Ilya</code></pre>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    })
+</script>
+</body>
+</html>
